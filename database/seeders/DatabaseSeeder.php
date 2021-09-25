@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
     {
         Unit::create(['name'=>'SD','slug'=>'sdi']);
         Unit::create(['name'=>'SMP','slug'=>'smpi']);
-        User::create(['name'=>'Admin ppdb','email'=>'admin@ramahanak.com','role'=>'admin','password'=>Hash::make('password')]);
-        User::create(['name'=>'user ppdb','email'=>'user@ramahanak.com','role'=>'user','password'=>Hash::make('password')]);
+        User::create(['name'=>'Admin','email'=>'admin.ppdb@ramahanak.sch.id','role'=>'admin','password'=>Hash::make('password')]);
+        User::create(['name'=>'User trial','email'=>'zahrah-fl@ramahanak.sch.id','role'=>'user','password'=>Hash::make('password')]);
 
         // $date= Carbon::create(2001, 09, 28);
         Form::create([

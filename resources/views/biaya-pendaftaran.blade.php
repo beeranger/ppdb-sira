@@ -11,7 +11,8 @@
                         <h5>Formulir Pendaftaran : Rp.500.000</h5>
                             <ul>
                                 <li>Formulir            : Rp.250.000</li>
-                                <li>Test Psikologi      : Rp.250.000</li>
+                                <li>Test Psikologi*      : Rp.250.000</li>
+                                <p class="text-muted"> *Hasil test akan diberikan kepada orang tua calon siswa</p>
                             </ul>
                             
                             <p class="card-text">                            
@@ -25,7 +26,7 @@
                             </p>
                             <h4 class="card-title"> Total biaya Putra : Rp.9.400.000 </h4>
                             <h4 class="card-title"> Total biaya Putri : Rp.9.500.000 </h4>
-                        <a href="javascript:void(0)" class="btn btn-primary">Daftar</a>
+                        <a href="{{ route('register') }}" class="btn btn-primary">Daftar</a>
                     </div>
                 </div>
             </div>
@@ -37,20 +38,22 @@
                         <h5>Formulir Pendaftaran : Rp.550.000</h5>
                             <ul>
                                 <li>Formulir        : Rp.250.000</li>
-                                <li>Test Psikologi  : Rp.300.000</li>
+                                <li>Test Psikologi*  : Rp.300.000</li>
+                                <p class="text-muted"> *Hasil test akan diberikan kepada orang tua calon siswa</p>
                         </ul>
+                       
                         
                         <p class="card-text"><h5>Rincian Biaya Masuk:</h5>
                             <ul> 
                                 <li> Uang Pendidikan    : Rp. 6.500.000</li>
-                                <li> Uang Kegiatan      : Rp. 2.500.000</li>
+                                <li> Uang Kegiatan      : Rp. 2.000.000</li>
                                 <li> Uang Seragam       : Rp. 1.000.000 (untuk Putra) / Rp. 1.200.000 (untuk Putri)</li>
                                 <li> SPP Pertama        : Rp. 600.000</li>
                             </ul>                            
                         </p>
-                        <h4 class="card-title"> Total biaya Putra : Rp.10.600.000 </h4>
-                        <h4 class="card-title"> Total biaya Putri : Rp.10.800.000 </h4>
-                        <a href="javascript:void(0)" class="btn btn-primary">Daftar</a>
+                        <h4 class="card-title"> Total biaya Putra : Rp.10.100.000 </h4>
+                        <h4 class="card-title"> Total biaya Putri : Rp.10.300.000 </h4>
+                        <a href="{{ route('register') }}" class="btn btn-primary">Daftar</a>
                     </div>
                 </div>
             </div>

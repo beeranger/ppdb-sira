@@ -50,17 +50,17 @@
             <!-- ============================================================== -->
             <div class="container-fluid">                
                 <div class="row gx-5 align-items-center justify-content-center bg-light-warning">
-                    <div class="col-lg-8 col-xl-7 col-xxl-6">
+                    <div class="col-md-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-xl-start">
                             <h1 class="display-5 fw-bolder text-dark mb-2">PPDB Sekolah Islam Ramah Anak</h1>
                             <p class="lead fw-normal text-white-75 mb-4">Selamat datang di sistem PPDB online Sekolah Islam Ramah Anak. Sebelum mendaftar mohon membaca lebih mengenai panduan pendaftaran online siswa baru. Silahkan login terlebih dahulu, Apabila anda belum mempunyai akun, silahkan klik tombol ‘Register’ di bawah ini.</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                <a class="btn btn-warning text-dark btn-lg px-4" href="#!">Daftar</a>
-                                <a class="btn btn-warning text-dark btn-lg px-4" href="#!">Login</a>
+                                <a class="btn btn-warning text-dark btn-lg px-4" href="{{ route('register') }}">Daftar</a>
+                                <a class="btn btn-warning text-dark btn-lg px-4" href="{{ route('login') }}">Login</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="{{ asset('assets/images/lapangan.png') }}" alt="..." width="600px"/></div>
+                    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="{{ asset('assets/images/lapangan.jpg') }}" alt="..." width="600px"/></div>
                 </div>
             </div>
             <!-- footer -->
