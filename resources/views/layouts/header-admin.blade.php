@@ -62,7 +62,7 @@
                         </div>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();"><i data-feather="log-out"
-                                class="feather-sm text-danger me-1 ms-1"></i> Logout</a>
+                                class="feather-sm text-danger me-1 ms-1"></i> Keluar</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>                     

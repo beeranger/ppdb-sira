@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, nice admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, ">
-    <meta name="description" content="Nice is powerful and clean admin dashboard template, inpired from Google's Material Design">
+    <meta name="keywords" content="PPDB, 2022-2023, SDI Ramah Anak, SMPI Ramah Anak, ramahanak ">
+    <meta name="description" content="Sistem pendaftaran online Sekolah islam Ramah Anak">
     <meta name="robots" content="noindex,nofollow">
-    <title>Nice Template by WrapPixel</title>
+    <title>PPDB SIRA</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/niceadmin/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/assets/favicon-ra.png') }}">
@@ -49,7 +49,7 @@
                 <div id="loginform">
                     <div class="logo text-center">
                         <span class="db mb-2"><img src="{{ asset('/assets/favicon-ra.png') }}" alt="logo" height="100px"/></span>
-                        <h3 class="box-title mb-3">Log In akun PPDB</h3>
+                        <h3 class="box-title mb-3">Masuk ke akun PPDB</h3>
                     </div>
                     <!-- Form -->
                     <div class="row">
@@ -71,13 +71,13 @@
                                             <label for="checkbox-signup"> Remember me </label>
                                         </div>
                                         <div class="ms-auto">
-                                            <a href="{{ route('password.request') }}" class="link font-weight-medium d-flex align-items-center"><i class="ri-lock-line fs-5 me-1"></i> Forgot password?</a>
+                                            <a href="{{ route('password.request') }}" class="link font-weight-medium d-flex align-items-center"><i class="ri-lock-line fs-5 me-1"></i> Lupa password?</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group text-center mt-4 mb-3">
                                     <div class="col-xs-12">
-                                        <button class="btn btn-info d-block w-100 waves-effect waves-light" type="submit">Log In</button>
+                                        <button class="btn btn-info d-block w-100 waves-effect waves-light" type="submit">Masuk</button>
                                     </div>
                                 </div>
                                 <div class="form-group mb-0 mt-4">

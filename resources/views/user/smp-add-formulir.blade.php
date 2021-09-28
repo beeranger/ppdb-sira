@@ -1,4 +1,4 @@
-@extends('User.main')
+@extends('user.main')
 
 @section('content')
 <div class="container-fluid">
@@ -29,19 +29,14 @@
                                         <label for="jenis_kelamin">Jenis Kelamin :</label>
                                         <div class="c-inputs-stacked">
                                             <div class="form-check">
-                                                <input type="radio" id="customRadio8" name="jenis_kelamin" value="Laki-laki" class="form-check-input required">
+                                                <input type="radio" id="customRadio8" name="jenis_kelamin" value="Laki-laki" class="form-check-input required" {{ old('jenis_kelamin')=="Laki-laki" ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="">Laki-laki</label>
                                             </div>
                                             <div class="form-check">
-                                                <input type="radio" id="customRadio9" name="jenis_kelamin" value="Perempuan" class="form-check-input required">
+                                                <input type="radio" id="customRadio9" name="jenis_kelamin" value="Perempuan" class="form-check-input required" {{ old('jenis_kelamin')=="Perempuan" ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="">Perempuan</label>
                                             </div>
                                         </div>
-                                        @error('tempat_tinggal')
-                                        <div class="text-danger">
-                                            Pilih salah satu opsi
-                                        </div>
-                                        @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="nik">Nomor Induk Kependudukan (NIK):</label>
@@ -49,7 +44,9 @@
                                         @error('nik')<div class="text-danger"> masukan 16 digit NIK</div>@enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="nisn">Nomor Induk Siswa Nasional :</label>
+                                        <label for="nisn">Nomor Induk Siswa Nasional (NISN):
+                                            <p class="text-muted"> Jika belum memiliki NISN masuka " 0000000000 "</p>
+                                        </label>
                                         <input type="number" class="form-control required"  id="nisn" name="nisn" value="{{ old('nisn') }}">
                                         @error('nisn')<div class="text-danger"> masukan 10 digit NISN</div>@enderror
                                     </div>
@@ -64,7 +61,7 @@
                                         @error('tanggal_lahir')<div class="text-danger"> {{ $message }}</div>@enderror
                                     </div>
                                 </div>
-                                <div class="col-md-6">  
+                                <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="agama">Agama :</label>
                                         <input type="text" class="form-control required" id="agama" name="agama" value="{{ old('agama') }}">
@@ -75,22 +72,21 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="cita-cita">Cita-cita :</label>
-                                        <input type="text" class="form-control required" id="cita-cita" name="cita-cita" value="{{ old('cita-cita') }}">
-                                    </div>                
+                                        <input type="text" class="form-control required" id="cita2" name="cita2" value="{{ old('cita2') }}">
+                                    </div>
                                     <div class="mb-3">
                                         <label for="">Alamat :</label>
-                                        <input type="text" class="form-control" id="alamat" name="alamat">
-                                    </div>              
-
+                                        <input type="text" class="form-control" id="alamat" name="alamat" value="{{ old('alamat') }}">
+                                    </div>
                                     <div class="mb-3">
                                         <label for="">Tempat tinggal :</label>
                                         <div class="c-inputs-stacked">
                                             <div class="form-check">
-                                                <input type="radio" id="customRadio8" name="tempat_tinggal" value="Bersama orang tua" class="form-check-input required">
+                                                <input type="radio" id="customRadio8" name="tempat_tinggal" value="Bersama orang tua" class="form-check-input required" {{ old('tempat_tinggal')=="Bersama orang tua" ? 'checked' : '' }} >
                                                 <label class="form-check-label" for="">Bersama Orang tua</label>
                                             </div>
                                             <div class="form-check">
-                                                <input type="radio" id="customRadio9" name="tempat_tinggal" value="Bersama wali" class="form-check-input required">
+                                                <input type="radio" id="customRadio9" name="tempat_tinggal" value="Bersama wali" class="form-check-input required"{{ old('tempat_tinggal')=="Bersama wali" ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="">Bersama Wali</label>
                                             </div>
                                         </div>
@@ -104,11 +100,11 @@
                                         <label for="">Berkebutuhan Khusus :</label>
                                         <div class="c-inputs-stacked">
                                             <div class="form-check">
-                                                <input type="radio" id="customRadio6" name="berkebutuhan_khusus" value="ya" class="form-check-input required" >
+                                                <input type="radio" id="customRadio6" name="berkebutuhan_khusus" value="ya" class="form-check-input required"{{ old('berkebutuhan_khusus')=="ya" ? 'checked' : '' }} >
                                                 <label class="form-check-label" for="customRadio6" >Ya</label>
                                             </div>
                                             <div class="form-check">
-                                                <input type="radio" id="customRadio7" name="berkebutuhan_khusus" value="tidak" class="form-check-input required" >
+                                                <input type="radio" id="customRadio7" name="berkebutuhan_khusus" value="tidak" class="form-check-input required" {{ old('berkebutuhan_khusus')=="tidak" ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="customRadio7">Tidak</label>
                                             </div>
                                         </div>
@@ -120,29 +116,29 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Jenis kebutuhan khusus (Jika ya) :</label>
-                                        <input type="text" class="form-control" id="jenis_berkebutuhan_khusus" name="jenis_berkebutuhan_khusus">
+                                        <input type="text" class="form-control" id="jenis_berkebutuhan_khusus" name="jenis_berkebutuhan_khusus" value="{{ old('jenis_berkebutuhan_khusus') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Saran transportasi ke sekolah :</label>
                                         <div class="c-inputs-stacked">
                                             <div class="form-check">
-                                                <input type="radio" id="customRadio10" name="transport" value="Sepeda" class="form-check-input">
+                                                <input type="radio" id="customRadio10" name="transport" value="Sepeda" class="form-check-input required" {{ old('transport')=="Sepeda" ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="">Sepeda</label>
                                             </div>
                                             <div class="form-check">
-                                                <input type="radio" id="customRadio11" name="transport" value="Sepeda Motor" class="form-check-input" >
+                                                <input type="radio" id="customRadio11" name="transport" value="Sepeda Motor" class="form-check-input required" {{ old('transport')=="Sepeda Motor" ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="">Sepeda Motor</label>
                                             </div>
                                             <div class="form-check">
-                                                <input type="radio" id="customRadio12" name="transport" value="Mobil Pribadi" class="form-check-input" >
+                                                <input type="radio" id="customRadio12" name="transport" value="Mobil Pribadi" class="form-check-input required" {{ old('transport')=="Mobil Pribadi" ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="">Mobil Pribadi</label>
                                             </div>
                                             <div class="form-check">
-                                                <input type="radio" id="customRadio13" name="transport" value="Angkutan umum" class="form-check-input" >
+                                                <input type="radio" id="customRadio13" name="transport" value="Angkutan umum" class="form-check-input required" {{ old('transport')=="Angkutan umum" ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="">Angkutan umum</label>
                                             </div>
                                             <div class="form-check">
-                                                <input type="radio" id="customRadio14" name="transport" value="Ojek" class="form-check-input" >
+                                                <input type="radio" id="customRadio14" name="transport" value="Ojek" class="form-check-input required" {{ old('transport')=="Ojek" ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="">Ojek</label>
                                             </div>
                                         </div>
@@ -162,75 +158,78 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="">Nama lengkap (sesuai KTP/KK) :</label>
-                                        <input type="text" class="form-control" id="nama_ayah" name="nama_ayah" value="{{ old('nama_ayah') }}">
+                                        <input type="text" class="form-control required" id="nama_ayah" name="nama_ayah" value="{{ old('nama_ayah') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Tempat lahir :</label>
-                                        <input type="text" class="form-control" id="tempat_lahir_ayah" name="tempat_lahir_ayah" value="{{ old('tempat_lahir_ayah') }}">
+                                        <input type="text" class="form-control required" id="tempat_lahir_ayah" name="tempat_lahir_ayah" value="{{ old('tempat_lahir_ayah') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="date1">Tanggal lahir:</label>
-                                        <input type="date" class="date form-control" id="tanggal_lahir_ayah" name="tanggal_lahir_ayah">
+                                        <input type="date" class="date form-control required" id="tanggal_lahir_ayah" name="tanggal_lahir_ayah" value="{{ old('tanggal_lahir_ayah') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Nomor Handphone:</label>
-                                        <input type="number" class="form-control" id="no_handphone_ayah" name="no_handphone_ayah" value="{{ old('no_handphone_ayah') }}">
+                                        <input type="number" class="form-control required" id="no_handphone_ayah" name="no_handphone_ayah" value="{{ old('no_handphone_ayah') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Pendidikan Terakhir :</label>
-                                        <select class="form-select" id="pendidikan_terakhir_ayah" name="pendidikan_terakhir_ayah">
-                                            <option value="">-- pilih --</option>
-                                            <option value="SD">SD</option>
-                                            <option value="SMP">SMP</option>
-                                            <option value="SMA">SMA</option>
-                                            <option value="S1">S1</option>
-                                            <option value="S2">S2</option>
-                                            <option value="S3">S3</option>
+                                        <?php  $edu = array("SD"=>"SD","SMP"=>"SMP","SMA"=>"SMA","S1"=>"S1","S2"=>"S2","S3"=>"S3"); ?>
+                                        <select name="pendidikan_terakhir_ayah required" class="form-control">
+                                            @foreach ($edu as $ed =>$name)
+                                                <option value="{{ $ed }}"
+                                                @if (old('pendidikan_terakhir_ayah') == $ed)
+                                                    selected
+                                                @endif
+                                                >
+                                                    {{ $name }}
+                                                </option>
+                                            @endforeach
                                         </select>
                                         @error('pendidikan_terakhir_ayah')
                                         <div class="text-danger">
                                             Pilih salah satu opsi
                                         </div>
-                                        @enderror
+                                        @enderror                                         
                                     </div>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="">Pekerjaan  :</label>
-                                        <input type="text" class="form-control" id="pekerjaan_ayah" name="pekerjaan_ayah">
+                                        <input type="text" class="form-control required" id="pekerjaan_ayah" name="pekerjaan_ayah" value="{{ old('pekerjaan_ayah') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Alamat Tempat Kerja :</label>
-                                        <input type="text" class="form-control" id="alamat_kerja_ayah" name="alamat_kerja_ayah">
+                                        <input type="text" class="form-control required" id="alamat_kerja_ayah" name="alamat_kerja_ayah" value="{{ old('alamat_kerja_ayah') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Penghasilan :</label>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="penghasilan_ayah" name="penghasilan_ayah" value="500rb-2jt">
+                                            <input type="radio" class="form-check-input required" id="penghasilan_ayah" name="penghasilan_ayah" value="500rb-2jt" {{ old('penghasilan_ayah')=="500rb-2jt" ? 'checked' : '' }}>
                                             <label class="fork-check-label" for="">Rp.500.000-Rp.2.000.000 </label>
                                         </div>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="penghasilan_ayah" name="penghasilan_ayah" value="2jt-5jt">
+                                            <input type="radio" class="form-check-input required" id="penghasilan_ayah" name="penghasilan_ayah" value="2jt-5jt" {{ old('penghasilan_ayah')=="2jt-5jt" ? 'checked' : '' }}>
                                             <label class="form-check-label" for="">Rp.2.000.000-Rp.5.000.000 </label>
                                             
                                         </div>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="penghasilan_ayah" name="penghasilan_ayah" value="5jt-20jt" >
+                                            <input type="radio" class="form-check-input required" id="penghasilan_ayah" name="penghasilan_ayah" value="5jt-20jt" {{ old('penghasilan_ayah')=="5jt-20jt" ? 'checked' : '' }} >
                                             <label class="form-check-label" for="">Rp.5.000.000-Rp.20.000.000 </label>
                                             
                                         </div>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="penghasilan_ayah" name="penghasilan_ayah" value=">20jt" >
+                                            <input type="radio" class="form-check-input required" id="penghasilan_ayah" name="penghasilan_ayah" value=">20jt" {{ old('penghasilan_ayah')==">20jt" ? 'checked' : '' }} >
                                             <label class="form-check-label" for=""> lebih dari Rp.20.000.000</label>
                                         
                                         </div>
+                                        @error('penghasilan_ayah')
+                                            <div class="text-danger">
+                                                Pilih salah satu opsi
+                                            </div>
+                                        @enderror
                                     </div>
-                                    @error('penghasilan_ayah')
-                                        <div class="text-danger">
-                                            Pilih salah satu opsi
-                                        </div>
-                                    @enderror
                                 </div>
                             </div>
                         </section>
@@ -241,64 +240,77 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="">Nama lengkap (sesuai KTP/KK) :</label>
-                                        <input type="text" class="form-control" id="nama_ibu" name="nama_ibu">
+                                        <input type="text" class="form-control required" id="nama_ibu" name="nama_ibu" value="{{ old('nama_ibu') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Tempat lahir :</label>
-                                        <input type="text" class="form-control" id="tempat_lahir_ibu" name="tempat_lahir_ibu">
+                                        <input type="text" class="form-control required" id="tempat_lahir_ibu" name="tempat_lahir_ibu" value="{{ old('tempat_lahir_ibu') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="date1">Tanggal lahir:</label>
-                                        <input type="date" class="date form-control" id="tanggal_lahir_ibu" name="tanggal_lahir_ibu">
+                                        <input type="date" class="date form-control required" id="tanggal_lahir_ibu" name="tanggal_lahir_ibu" value="{{ old('tanggal_lahir_ibu') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Nomor Handphone:</label>
-                                        <input type="number" class="form-control" id="no_handphone_ibu" name="no_handphone_ibu" value="{{ old('no_handphone_ibu') }}">
+                                        <input type="number" class="form-control required" id="no_handphone_ibu" name="no_handphone_ibu" value="{{ old('no_handphone_ibu') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Pendidikan Terakhir :</label>
-                                        <select class="form-select" id="pendidikan_terakhir_ibu" name="pendidikan_terakhir_ibu">
-                                            <option value="">-- pilih --</option>
-                                            <option value="SD">SD</option>
-                                            <option value="SMP">SMP</option>
-                                            <option value="SMA">SMA</option>
-                                            <option value="S1">S1</option>
-                                            <option value="S2">S2</option>
-                                            <option value="S3">S3</option>
+                                        <?php  $edu = array("SD"=>"SD","SMP"=>"SMP","SMA"=>"SMA","S1"=>"S1","S2"=>"S2","S3"=>"S3"); ?>
+                                        <select name="pendidikan_terakhir_ibu" class="form-control">
+                                            @foreach ($edu as $ed =>$name)
+                                                <option value="{{ $ed }}"
+                                                @if (old('pendidikan_terakhir_ibu') == $ed)
+                                                    selected
+                                                @endif
+                                                >
+                                                    {{ $name }}
+                                                </option>
+                                            @endforeach
                                         </select>
+                                        @error('pendidikan_terakhir_ibu')
+                                        <div class="text-danger">
+                                            Pilih salah satu opsi
+                                        </div>
+                                        @enderror                                         
                                     </div>                                
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="">Pekerjaan  :</label>
-                                        <input type="text" class="form-control" id="pekerjaan_ibu" name="pekerjaan_ibu">
+                                        <input type="text" class="form-control required" id="pekerjaan_ibu" name="pekerjaan_ibu" value="{{ old('pekerjaan_ibu') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Alamat Tempat Kerja :</label>
-                                        <input type="text" class="form-control" id="alamat_kerja_ibu" name="alamat_kerja_ibu">
+                                        <input type="text" class="form-control required" id="alamat_kerja_ibu" name="alamat_kerja_ibu" value="{{ old('alamat_kerja_ibu') }}">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="">Penghasilan :</label>                                        
+                                        <label for="">Penghasilan :</label>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="penghasilan_ibu" name="penghasilan_ibu" value="500rb-2jt" >
+                                            <input type="radio" class="form-check-input required" id="penghasilan_ibu" name="penghasilan_ibu" value="500rb-2jt" {{ old('penghasilan_ibu')=="500rb-2jt" ? 'checked' : '' }}>
                                             <label class="fork-check-label" for="">Rp.500.000-Rp.2.000.000 </label>
                                         </div>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="penghasilan_ibu" name="penghasilan_ibu" value="2jt-5jt" >
+                                            <input type="radio" class="form-check-input required" id="penghasilan_ibu" name="penghasilan_ibu" value="2jt-5jt" {{ old('penghasilan_ibu')=="2jt-5jt" ? 'checked' : '' }}>
                                             <label class="form-check-label" for="">Rp.2.000.000-Rp.5.000.000 </label>
                                             
                                         </div>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="penghasilan_ibu" name="penghasilan_ibu" value="5jt-20jt" >
+                                            <input type="radio" class="form-check-input required" id="penghasilan_ibu" name="penghasilan_ibu" value="5jt-20jt" {{ old('penghasilan_ibu')=="5jt-20jt" ? 'checked' : '' }} >
                                             <label class="form-check-label" for="">Rp.5.000.000-Rp.20.000.000 </label>
                                             
                                         </div>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="penghasilan_ibu" name="penghasilan_ibu" value=">20jt" >
+                                            <input type="radio" class="form-check-input required" id="penghasilan_ibu" name="penghasilan_ibu" value=">20jt" {{ old('penghasilan_ibu')==">20jt" ? 'checked' : '' }} >
                                             <label class="form-check-label" for=""> lebih dari Rp.20.000.000</label>
                                         
                                         </div>
                                     </div>
+                                    @error('penghasilan_ibu')
+                                        <div class="text-danger">
+                                            Pilih salah satu opsi
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>                            
                         </section>
@@ -309,15 +321,15 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="">Nama lengkap (sesuai KTP/KK) :</label>
-                                        <input type="text" class="form-control" id="nama_wali" name="nama_wali">
+                                        <input type="text" class="form-control" id="nama_wali" name="nama_wali" value="{{ old('nama_wali') }}">
                                     </div>
                                     <div class="mb-3">
                                             <label for="">Tempat lahir :</label>
-                                            <input type="text" class="form-control" id="tempat_lahir_wali" name="tempat_lahir_wali">
+                                            <input type="text" class="form-control" id="tempat_lahir_wali" name="tempat_lahir_wali" value="{{ old('tempat_lahir_wali') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="date1">Tanggal lahir:</label>
-                                        <input type="date" class="date form-control" id="tanggal_lahir_wali" name="tanggal_lahir_wali">
+                                        <input type="date" class="date form-control" id="tanggal_lahir_wali" name="tanggal_lahir_wali" value="{{ old('tanggal_lahir_wali') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Nomor Handphone:</label>
@@ -325,48 +337,61 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Pendidikan Terakhir :</label>
-                                        <select class="form-select" id="pendidikan_terakhir_wali" name="pendidikan_terakhir_wali">
-                                            <option value="">-- pilih --</option>
-                                            <option value="SD">SD</option>
-                                            <option value="SMP">SMP</option>
-                                            <option value="SMA">SMA</option>
-                                            <option value="S1">S1</option>
-                                            <option value="S2">S2</option>
-                                            <option value="S3">S3</option>
+                                        <?php  $edu = array("SD"=>"SD","SMP"=>"SMP","SMA"=>"SMA","S1"=>"S1","S2"=>"S2","S3"=>"S3"); ?>
+                                        <select name="pendidikan_terakhir_wali" class="form-control">
+                                            @foreach ($edu as $ed =>$name)
+                                                <option value="{{ $ed }}"
+                                                @if (old('pendidikan_terakhir_wali') == $ed)
+                                                    selected
+                                                @endif
+                                                >
+                                                    {{ $name }}
+                                                </option>
+                                            @endforeach
                                         </select>
+                                        @error('pendidikan_terakhir_wali')
+                                        <div class="text-danger">
+                                            Pilih salah satu opsi
+                                        </div>
+                                        @enderror                                         
                                     </div>
                                 </div>      
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="">Pekerjaan  :</label>
-                                        <input type="text" class="form-control" id="pekerjaan_wali" name="pekerjaan_wali">
+                                        <input type="text" class="form-control" id="pekerjaan_wali" name="pekerjaan_wali" value="{{ old('pekerjaan_wali') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Alamat Tempat Kerja :</label>
-                                        <input type="text" class="form-control" id="alamat_kerja_wali" name="alamat_kerja_wali">
+                                        <input type="text" class="form-control" id="alamat_kerja_wali" name="alamat_kerja_wali" value="{{ old('alamat_kerja_wali') }}">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="">Penghasilan :</label>                                        
+                                        <label for="">Penghasilan :</label>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="penghasilan_wali" name="penghasilan_wali" value="500rb-2jt" >
+                                            <input type="radio" class="form-check-input reuired" id="penghasilan_wali" name="penghasilan_wali" value="500rb-2jt" {{ old('penghasilan_wali')=="500rb-2jt" ? 'checked' : '' }}>
                                             <label class="fork-check-label" for="">Rp.500.000-Rp.2.000.000 </label>
                                         </div>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="penghasilan_wali" name="penghasilan_wali" value="2jt-5jt" >
+                                            <input type="radio" class="form-check-input " id="penghasilan_wali" name="penghasilan_wali" value="2jt-5jt" {{ old('penghasilan_wali')=="2jt-5jt" ? 'checked' : '' }}>
                                             <label class="form-check-label" for="">Rp.2.000.000-Rp.5.000.000 </label>
                                             
                                         </div>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="penghasilan_wali" name="penghasilan_wali" value="5jt-20jt" >
+                                            <input type="radio" class="form-check-input " id="penghasilan_wali" name="penghasilan_wali" value="5jt-20jt" {{ old('penghasilan_wali')=="5jt-20jt" ? 'checked' : '' }} >
                                             <label class="form-check-label" for="">Rp.5.000.000-Rp.20.000.000 </label>
                                             
                                         </div>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="penghasilan_wali" name="penghasilan_wali" value=">20jt" >
+                                            <input type="radio" class="form-check-input " id="penghasilan_wali" name="penghasilan_wali" value=">20jt" {{ old('penghasilan_wali')==">20jt" ? 'checked' : '' }} >
                                             <label class="form-check-label" for=""> lebih dari Rp.20.000.000</label>
-                                    
+                                        
                                         </div>
                                     </div>
+                                    @error('penghasilan_wali')
+                                        <div class="text-danger">
+                                            Pilih salah satu opsi
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>                            
                         </section>
@@ -378,42 +403,47 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="">Tinggi Badan :</label>
-                                        <input type="number" class="form-control" id="tinggi_badan" name="tinggi_badan">
+                                        <input type="number" class="form-control required" id="tinggi_badan" name="tinggi_badan" value="{{ old('tinggi_badan') }}">
                                         <label class="text-muted"> Centimeter</label>
                                     </div>                                                      
                                     <div class="mb-3">
                                         <label for="">Berat Badan :</label>
-                                        <input type="number" class="form-control" id="berat_badan" name="berat_badan">
+                                        <input type="number" class="form-control required" id="berat_badan" name="berat_badan" value="{{ old('berat_badan') }}">
                                         <label class="text-muted"> Kilogram</label>
                                     </div>                                                      
                                     <div class="mb-3">
                                         <label for="">Penyakit khusus :</label>
-                                        <input type="text" class="form-control" id="penyakit_khusus" name="penyakit_khusus">
+                                        <input type="text" class="form-control required" id="penyakit_khusus" name="penyakit_khusus" value="{{ old('penyakit_khusus') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Golongan Darah :</label>
-                                        <select class="form-select" id="golongan_darah" name="golongan_darah">
-                                            <option value="">-- pilih --</option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="O">O</option>
-                                            <option value="AB">AB</option>
+                                        <?php  $goldar = array("A"=>"A","B"=>"B","O"=>"O","AB"=>"AB","tidak tahu"=>"Tidak Tahu"); ?>
+                                        <select name="golongan_darah" class="form-control required">
+                                            @foreach ($goldar as $gd =>$name)
+                                                <option value="{{ $gd }}"
+                                                @if (old('golongan_darah') == $gd)
+                                                    selected
+                                                @endif
+                                                >
+                                                    {{ $name }}
+                                                </option>
+                                            @endforeach
                                         </select>
                                         @error('golongan_darah')
                                         <div class="text-danger">
                                             Pilih salah satu opsi
                                         </div>
-                                        @enderror
+                                        @enderror                                        
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Kelainan Jasmani :</label>
                                         <div class="c-inputs-stacked">
                                             <div class="form-check">
-                                                <input type="radio" id="customRadio6" name="kelainan_jasmani" value="ya" class="form-check-input">
+                                                <input type="radio" id="customRadio6" name="kelainan_jasmani" value="ya" class="form-check-input required" {{ old('kelainan_jasmani')=="ya" ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="">Ya</label>
                                             </div>
                                             <div class="form-check">
-                                                <input type="radio" id="kelainan_jasmani" name="kelainan_jasmani" value="tidak" class="form-check-input" >
+                                                <input type="radio" id="kelainan_jasmani" name="kelainan_jasmani" value="tidak" class="form-check-input required" {{ old('kelainan_jasmani')=="tidak" ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="">Tidak</label>
                                             </div>
                                         </div>
@@ -425,40 +455,42 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Jelaskan ( jika Ya) :</label>
-                                        <input type="text" class="form-control" id="kelainan_jasmani_ya" name="kelainan_jasmani_ya">
+                                        <input type="text" class="form-control" id="kelainan_jasmani_ya" name="kelainan_jasmani_ya" value="{{ old('kelainan_jasmani_ya') }}">
                                     </div> 
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="">Jarak dari rumah ke sekolah :</label>
-                                        <input type="number" class="form-control" id="jarak" name="jarak">
+                                        <input type="number" class="form-control required" id="jarak" name="jarak" value="{{ old('jarak') }}">
                                         <label class="text-muted"> km</label>
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Waktu tempuh dari rumah ke sekolah :</label>
-                                        <input type="number" class="form-control" id="waktu" name="waktu">
+                                        <input type="number" class="form-control required" id="waktu" name="waktu" value="{{ old('waktu') }}">
                                         <label class="text-muted"> Menit</label>
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Anak ke :</label>
-                                        <input type="number" class="form-control" id="anak_ke" name="anak_ke">
+                                        <input type="number" class="form-control required" id="anak_ke" name="anak_ke" value="{{ old('anak_ke') }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Jumlah saudara :</label>
-                                        <input type="number" class="form-control" id="jumlah_saudara" name="jumlah_saudara">
+                                        <input type="number" class="form-control required" id="jumlah_saudara" name="jumlah_saudara" value="{{ old('jumlah_saudara') }}">
                                     </div>
+                                    
                                     <div class="mb-3">
                                         <label for="">Sebutkan nama kakak/adik kandung (nama,usia, kakak/adik) :
                                             <p class="text-muted">contoh: (Maryam,12 tahun,kakak),(Faris,2 tahun, adik)</p>
                                         </label>
-                                        <textarea name="saudara_kandung" id="saudara_kandung" rows="4" class="form-control"></textarea>
+                                        <textarea name="saudara_kandung" id="saudara_kandung" rows="4" class="form-control required" >{{ old('saudara_kandung') }}</textarea>
                                     </div> 
                                     <div class="mb-3">
                                         <label for="">Sebutkan aggota keluarga lain dirumah (nama,usia, hubunga keluarga) :
                                             <p class="text-muted">contoh: (Siti,56 tahun,nenek),(Budi, 57 tahun, Kakek)</p>
                                         </label>
-                                        <textarea name="daftar_keluarga" id="daftar_keluarga" rows="4" class="form-control"></textarea>
-                                    </div>
+                                        <textarea name="daftar_keluarga" id="daftar_keluarga" rows="4" class="form-control required">{{ old('daftar_keluarga') }}</textarea>
+                                    </div> 
+
                                 </div>
                             </div>
                         </section>
@@ -469,11 +501,11 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="">SD :</label>
-                                        <input type="text" class="form-control" id="nama_sd" name="nama_paud">
+                                        <input type="text" class="form-control required" id="nama_sd" name="nama_sd" value="{{ old('nama_sd') }}">
                                     </div>                                        
                                     <div class="mb-3">
                                         <label for="">Alamat SD:</label>
-                                        <input type="text" class="form-control" id="alamat_sd" name="alamat_paud">
+                                        <input type="text" class="form-control required" id="alamat_sd" name="alamat_sd" value="{{ old('alamat_sd') }}">
                                     </div>
                                 </div>
                             </div>
@@ -485,11 +517,27 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="">Bank Tujuan</label>
-                                        <input type="text" class="form-control required" id="bank" name="bank">
+                                        <?php  $daftar_bank = array("mandiri sdi"=>"Mandiri SD Islam Ramah Anak (157-000-4131-323)","mandiri smpi"=>"Mandiri SMP Islam Ramah Anak (157-00-63636303)","BSI-BSM"=>"BSI-BSM Yayasan Khaulah Muadzah ( 7136-4983-92)"); ?>
+                                        <select name="bank" class="form-control required">
+                                            @foreach ($daftar_bank as $db =>$name)
+                                                <option value="{{ $db }}"
+                                                @if (old('bank') == $db)
+                                                    selected
+                                                @endif
+                                                >
+                                                    {{ $name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('bank')
+                                        <div class="text-danger">
+                                            Pilih salah satu opsi
+                                        </div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Nomor Rekening :</label>
-                                        <input type="text" class="form-control required" id="rekening" name="rekening">
+                                        <input type="text" class="form-control required" id="rekening" name="rekening" value="{{ old('rekening') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -499,7 +547,7 @@
                                     </form> --}}
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input class="form-control required" type="file" id="photo_url" name="photo_url" aria-describedby="fileHelp">
+                                            <input class="form-control required" type="file" id="photo_url" name="photo_url" aria-describedby="fileHelp" value="{{ old('photo_url') }}">
                                         </div>
                                         {{-- <button class="btn btn-light-info text-info font-weight-medium" type="submit" name="action" value="upload">Upload</button> --}}
                                         <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of image should not be more than 2MB.</small>

@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, nice admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, ">
-    <meta name="description" content="Nice is powerful and clean admin dashboard template, inpired from Google's Material Design">
+    <meta name="keywords" content="PPDB, 2022-2023, SDI Ramah Anak, SMPI Ramah Anak, ramahanak ">
+    <meta name="description" content="Sistem pendaftaran online Sekolah islam Ramah Anak">
     <meta name="robots" content="noindex,nofollow">
-    <title>Nice Template by WrapPixel</title>
+    <title>PPDB SIRA</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/niceadmin/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/assets/favicon-ra.png') }}">
@@ -58,7 +58,7 @@
                                 @csrf
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control form-input-bg" id="name" name="name" placeholder="Nama Lengkap" required autocomplete="name" autofocus>
-                                    <label for="name">Full Name</label>
+                                    <label for="name">Nama Lengkap</label>
                                     <div class="invalid-feedback">
                                         Full name is required
                                     </div>
@@ -79,19 +79,19 @@
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="password" class="form-control form-input-bg" id="password_confirmation" name="password_confirmation"  required autocomplete="new-password">
-                                    <label for="password_confirmation">Confirm Password</label>
+                                    <label for="password_confirmation">Konfirmasi Password</label>
                                     <div class="invalid-feedback">
                                         Password is required
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-stretch">
-                                    <button type="submit" class="btn btn-info d-block w-100">Sign up</button>
+                                    <button type="submit" class="btn btn-info d-block w-100">Registrasi</button>
                                 </div>
                             </form>
                                 
                             <div class="form-group mb-0 mt-4">
                                 <div class="col-sm-12 justify-content-center d-flex">
-                                    <p>Sudah memiliki akun? silahkan untuk <a href="{{ route('login') }}" class="text-info font-weight-medium ms-1">Log in</a></p>
+                                    <p>Sudah memiliki akun? silahkan untuk <a href="{{ route('login') }}" class="text-info font-weight-medium ms-1">Masuk</a></p>
                                 </div>
                             </div>
                         </div>

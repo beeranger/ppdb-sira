@@ -17,7 +17,7 @@
                     @csrf
 
                     <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Alamat E-Mail ') }}</label>
 
                         <div class="col-md-8">
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -33,11 +33,11 @@
                     <div class="form-group row  mt-4 mb-4">
                         <div class="col-md-8 offset-md-4">
                             <button type="submit" class="btn btn-primary">
-                                {{ __('Send Password Reset Link') }}
+                                {{ __('Kirim Link Reset Password') }}
                             </button>
                         </div>
                     </div>
-                    <a href="{{ route('login') }}" class="text-info font-weight-medium ms-1">Log in</a>
+                    <a href="{{ route('login') }}" class="text-info font-weight-medium ms-1">Halaman Masuk</a>
                 </form>
             </div>
         </div>

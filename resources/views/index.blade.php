@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, nice admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, material design, material dashboard bootstrap 5 dashboard template">
-    <meta name="description" content="Nice is powerful and clean admin dashboard template, inpired from Google's Material Design">
+    <meta name="keywords" content="PPDB, 2022-2023, SDI Ramah Anak, SMPI Ramah Anak, ramahanak ">
+    <meta name="description" content="Sistem pendaftaran online Sekolah islam Ramah Anak">
     <meta name="robots" content="noindex,nofollow">
     <title>PPDB SI RamahAnak</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/niceadmin/" />
@@ -56,7 +56,7 @@
                             <p class="lead fw-normal text-white-75 mb-4">Selamat datang di sistem PPDB online Sekolah Islam Ramah Anak. Sebelum mendaftar mohon membaca lebih mengenai panduan pendaftaran online siswa baru. Silahkan login terlebih dahulu, Apabila anda belum mempunyai akun, silahkan klik tombol ‘Register’ di bawah ini.</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <a class="btn btn-warning text-dark btn-lg px-4" href="{{ route('register') }}">Daftar</a>
-                                <a class="btn btn-warning text-dark btn-lg px-4" href="{{ route('login') }}">Login</a>
+                                <a class="btn btn-warning text-dark btn-lg px-4" href="{{ route('login') }}">Masuk</a>
                             </div>
                         </div>
                     </div>

@@ -18,13 +18,13 @@ class CreateFormsTable extends Migration
             $table->boolean('is_verified')->default(0);
             $table->foreignId('user_id');
             $table->foreignId('unit_id');
-            $table->string('nama_lengkap');
-            $table->string('nama_panggilan');
+            $table->string('nama_lengkap')->nullable();
+            $table->string('nama_panggilan')->nullable();
             $table->string('jenis_kelamin');
-            $table->char('nik',16);
-            $table->char('nisn',10);
-            $table->string('tempat_lahir');
-            $table->date('tanggal_lahir');
+            $table->char('nik',16)->default('0000000000000000');
+            $table->char('nisn',10)->default('0000000000');
+            $table->string('tempat_lahir')->nullable();
+            $table->date('tanggal_lahir')->nullable();
             $table->string('agama')->nullable();
             $table->string('hobi')->nullable();
             $table->string('cita2')->nullable();
@@ -46,8 +46,8 @@ class CreateFormsTable extends Migration
 
             $table->string('nama_ibu')->nullable();
             $table->string('tempat_lahir_ibu')->nullable();
-            $table->char('no_handphone_ibu')->nullable();
             $table->date('tanggal_lahir_ibu')->nullable();
+            $table->char('no_handphone_ibu')->nullable();
             $table->string('pendidikan_terakhir_ibu')->nullable();
             $table->string('pekerjaan_ibu')->nullable();
             $table->string('alamat_kerja_ibu')->nullable();
@@ -62,7 +62,6 @@ class CreateFormsTable extends Migration
             $table->string('alamat_kerja_wali')->nullable();
             $table->string('penghasilan_wali')->nullable();
 
-
             $table->string('tinggi_badan')->nullable();
             $table->string('berat_badan')->nullable();
             $table->string('penyakit_khusus')->nullable();
@@ -74,25 +73,22 @@ class CreateFormsTable extends Migration
             $table->string('anak_ke')->nullable();
             $table->string('jumlah_saudara')->nullable();           
             $table->text('saudara_kandung')->nullable();           
-            $table->text('daftar_keluarga')->nullable();           
-
+            $table->text('daftar_keluarga')->nullable(); 
 
             $table->string('nama_paud')->nullable();           
             $table->string('alamat_paud')->nullable();           
             $table->string('nama_tk')->nullable();           
             $table->string('alamat_tk')->nullable();    
             $table->string('nama_sd')->nullable();           
-            $table->string('alamat_sd')->nullable();    
-            
-            
+            $table->string('alamat_sd')->nullable();     
+
             $table->text('kegiatan1')->nullable();           
             $table->text('kegiatan2')->nullable();           
             $table->text('kegiatan3')->nullable();           
             $table->text('kegiatan4')->nullable();           
             $table->text('kegiatan5')->nullable();           
             $table->text('kegiatan6')->nullable();           
-            $table->text('kegiatan7')->nullable(); 
-            
+            $table->text('kegiatan7')->nullable();             
             
             $table->string('tumbuh1')->nullable();           
             $table->string('tumbuh1a')->nullable();           
@@ -101,13 +97,12 @@ class CreateFormsTable extends Migration
             $table->string('tumbuh2a2')->nullable();           
             $table->string('tumbuh2b')->nullable();           
             $table->string('tumbuh2c')->nullable(); 
-                      
+
             $table->text('tumbuh3')->nullable();           
             $table->text('tumbuh4')->nullable();           
             $table->text('tumbuh5')->nullable();           
             $table->text('tumbuh6')->nullable();           
-            $table->text('tumbuh7')->nullable();
-            
+            $table->text('tumbuh7')->nullable();           
             
             $table->string('bank')->nullable();     
             $table->string('rekening')->nullable();     

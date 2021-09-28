@@ -9,22 +9,30 @@
                     Sistem Penerimaan Peserta Didik Baru Sekolah Islam Ramah Anak
                 </div>
                 <div class="card-body fs-5">
-                    Alur Pendaftaran Online: 
+                    <h2 class="text-info">Alur Pendaftaran</h2>
+                     
                     <ol>
-                        <li>Membuat akun PPDB dan login</li>
+                        <li>Membuat akun PPDB dan masuk</li>
                         <li>Melaukan pembayaran formulir ke salah satu rekening dibawah ini: 
-                            <ul>
-                                <li> mandiri 00000088888</li>
-                                <li> mandiri 00000089998</li>
+                            <ul >  Pendaftaran <b>SDI </b>Ramah anak :
+                                <li class="text-info font-weight-medium">Mandiri 157-000-4131-323 <br> a.n. SD Islam Ramah Anak</li>
+                                <li class="text-info font-weight-medium">BSI-BSM 7136-4983-92  <br> a.n. Yayasan Khaulah Muadzah</li>
+                            </ul>
+                            <ul > Pendaftaran <b>SMPI </b> Ramah anak :                                
+                                <li class="text-info font-weight-medium"> Mandiri 157-00-63636303  <br>  a.n. SMP Islam Ramah Anak</li>
+                                <li class="text-info font-weight-medium"> BSI-BSM  7136-4983-92  <br>  a.n. Yayasan Khaulah Muadzah</li>
                             </ul>
                         </li>
-                        <li>Mengisi formulir pendaftaran melalui link berikut ini :
-                            <ul>
-                                <li> <a href="{{ route('user.add-formulir',1) }}">SDI Ramah Anak</a></li>
-                                <li> <a href="{{ route('user.add-formulir',2) }}">SMPI Ramah Anak</a></li>
-                            </ul>
+                        <li>Siapkan bukti pembayaran formulir (dapat berupa scan / foto) dengan format file .jpg/.png dengan maksimum besar file 2MB.</li>
+                        <li>Mengisi formulir pendaftaran melalui link berikut ini : 
+                            <div class="col-md-8 py-2 mt-2 mb-2">
+                                <a href="{{ route('user.add-formulir',1) }}" class="btn btn-primary font-weight-medium"> Daftar SDI RamahAnak</a>
+                                <a href="{{ route('user.add-formulir',2) }}" class="btn btn-primary font-weight-medium"> Daftar SMPI RamahAnak </a>
+                            </div>
                         </li>
-                        <li> Mohon membawa berkas berikut ini saat observasi :
+                        <li><h4 class="font-weight-medium text-danger">Formulir yang telah dikirim tidak dapat di ubah kembali, mohon diisi dengan seksama dan sebaik mungkin.</h4> </li>
+                        <li>Admin akan memverifikasi formulir yang telah dikirim, dan mengupdate status formulir sudah diterima atau belum. </li>
+                        <li> Mohon membawa berkas berikut ini saat wawancara dan observasi siswa :
                             <ul>
                                 <li> 1 lembar fotocopy akte kelahiran</li>
                                 <li> 1 lembar fotocopy kartu keluarga</li>
@@ -32,7 +40,14 @@
                                 <li> 1 lembar fotocopy ijazah SD (untuk yang mendaftar SMP)</li>
                                 <li> 2 lembar pas foto terbaru ukuran 3x4 </li>
                             </ul>    
-                        </li>                        
+                        </li>     
+                        <li>Jika ada pertanyaan atau kendala dapat menghubungi melalui 
+                            <ul> 
+                                <li>email : admin.ppdb@ramahanak.sch.id</li>
+                                <li>Whatsapp : </li>
+                            </ul>
+
+                        </li>                   
                     </ol>
                 </div>
             </div>

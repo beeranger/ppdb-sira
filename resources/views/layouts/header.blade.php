@@ -49,7 +49,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">
-                        <span class="ms-1 font-weight-medium d-none d-sm-inline-block">Login <i data-feather="log-in" class="feather-sm"></i></span>
+                        <span class="ms-1 font-weight-medium d-none d-sm-inline-block">Masuk <i data-feather="log-in" class="feather-sm"></i></span>
                     </a>
                 </li>
             </ul>

@@ -62,7 +62,7 @@
                             <div class=""><img src="{{ asset('assets/images/users/5.jpg') }}" alt="user" class="rounded-circle" width="60"></div>
                             <div class="ms-2">
                                 <h4 class="mb-0 text-white">{{ Auth::user()->name }}</h4>
-                                <p class=" mb-0">username : {{ Auth::user()->username }}</p>
+                                <p class=" mb-0">email : {{ Auth::user()->email }}</p>
                             </div>
                         </div>
                         {{-- <div class="dropdown-divider"></div>
@@ -71,7 +71,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();"><i data-feather="log-out"
-                                class="feather-sm text-danger me-1 ms-1"></i> Logout</a>
+                                class="feather-sm text-danger me-1 ms-1"></i> Keluar</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
