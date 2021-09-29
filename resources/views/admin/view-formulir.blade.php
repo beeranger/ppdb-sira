@@ -612,7 +612,7 @@
                             </div>
                             <div class="col-md-6">
                                 <form class="mb-3">
-                                    @php $path = Storage::url($form->photo_url); @endphp                                    
+                                    @php $path = Storage::url('public/galeri/'.$form->photo_url); @endphp                                    
                                     <label for=""> Bukti pembayaran  : {{ $path }} {{ $form->photo_url }}</label>
                                     @if ($form->photo_url == NULL)
                                         <p class="text-muted"> tidak ada bukti pembayaran yang diupload</p>
