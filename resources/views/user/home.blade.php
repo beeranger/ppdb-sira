@@ -33,7 +33,7 @@
                         <li><h4 class="font-weight-medium text-danger">Formulir yang telah dikirim tidak dapat di ubah kembali, mohon diisi dengan seksama dan sebaik mungkin.</h4> </li>
                         <li>Admin akan memverifikasi formulir yang telah dikirim, dan mengupdate status formulir sudah diterima atau belum. </li>
                         <li> Mohon membawa berkas berikut ini saat wawancara dan observasi siswa :
-                            <ul>
+                            <ul class="text-info font-weight-medium">
                                 <li> 1 lembar fotocopy akte kelahiran</li>
                                 <li> 1 lembar fotocopy kartu keluarga</li>
                                 <li> 1 lembar fotocopy ijazah TK (untuk yang mendaftar SD)</li>

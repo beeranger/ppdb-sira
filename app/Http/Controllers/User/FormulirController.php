@@ -68,7 +68,7 @@ class FormulirController extends Controller
             ]);
         
         if ( $unit->id ==1){
-            Form::firstOrCreate([
+            $form = Form::firstOrCreate([
                 'user_id' =>  Auth::user()->id,
                 'unit_id' => $unit->id ,
                 'nama_lengkap'=> $request->nama_lengkap,
@@ -165,6 +165,7 @@ class FormulirController extends Controller
             
         Quitioner::firstOrCreate([
             'user_id'=>Auth::user()->id,
+            'form_id'=>$form->id,
             'quis1' => $request->quis1,
             'quis2' => $request->quis2,
             'quis3' => $request->quis3,

@@ -47,7 +47,7 @@
     <ol>
       <li> Formulir pendaftaran sudah diisi lengkap</li>
       <li> 1 lembar fotocopy Kartu Keluarga</li>
-      <li> 1 lembar fotocopy ijazah TK</li>
+      <li> 1 lembar fotocopy ijazah SD</li>
       <li> 2 lembar Pas foto terbaru ukuran 3x4 </li>
     </ol>
   </p>

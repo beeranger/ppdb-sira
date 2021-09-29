@@ -16,7 +16,7 @@ class CreateQuitionersTable extends Migration
         Schema::create('quitioners', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            // $table->foreignId('form_id');
+            $table->foreignId('form_id');
             $table->timestamps();
             
             for($x=1;$x<=96;$x++){

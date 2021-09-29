@@ -887,5 +887,20 @@
         </tr>
     </tbody>
   </table>
+
+
+  <p align="right">
+    Depok,........................................... 
+  </p>
+  <p align="right">
+    Orangtua/Wali Calon Siswa
+  </p>
+  <p align="right">
+    tanda tangan dan nama jelas
+  </p>
+  <strong>
+    <br clear="all"/>
+  </strong>
+  <div style="page-break-before:always">&nbsp;</div>
 </body>
 </html>
