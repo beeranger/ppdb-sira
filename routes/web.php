@@ -55,7 +55,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware'=>['auth',
     Route::get('/users/{user:id}',[AdminUserController::class,'edit'])->name('admin.edit-admin');
     Route::put('/users/{user:id}',[AdminUserController::class,'update'])->name('admin.update-admin');
     Route::delete('/users/{user:id}',[AdminUserController::class,'destroy'])->name('admin.delete-admin');
-
+    
+    Route::get('/storage', function(){
+        Artisan::call('storage:link');
+    });
 });
 
 Route::group(['namespace' => 'User', 'prefix' => 'user','middleware'=>['auth','cek_login:user']], function() {
