@@ -44,7 +44,8 @@
                         <li>Jika ada pertanyaan atau kendala dapat menghubungi melalui 
                             <ul> 
                                 <li>email : admin.ppdb@ramahanak.sch.id</li>
-                                <li>Whatsapp : </li>
+                                <li>Telpon : 021 – 27611406</li>
+                                <li>Whatsapp (hanya melayani Pesan/Chat): 0822-4615-8383</li>
                             </ul>
 
                         </li>                   

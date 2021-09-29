@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Form;
+use App\Models\Quitioner;
 use Illuminate\Http\Request;
 use PDF;
 
@@ -59,14 +60,13 @@ class FormulirController extends Controller
     public function createPDF(Form $form) {
         // retreive all records from db
         $data=[
-            'form' => Form::findOrFail($form->id),
+            'form' =>Form::findOrFail($form->id),            
         ];
 
         if ($form->unit_id == 1){
-            // return view('user.sd-add-formulir');
             $pdf = PDF::loadView('admin.sd-pdf-formulir', $data);
+            // return view('admin.sd-pdf-formulir')->with($data);
         }elseif($form->unit_id ==2){
-            // return view('user.smp-add-formulir');
             $pdf = PDF::loadView('admin.smp-pdf-formulir', $data);
         }
         

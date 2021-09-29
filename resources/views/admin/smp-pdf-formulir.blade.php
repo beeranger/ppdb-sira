@@ -218,7 +218,7 @@
   <p>
     3. Keadaan Keluarga 
     <ol type="a">
-      <li>Calon siswa adalah anak ke <span class="tab">{{ $form->anak_ke }}</span> dari <span class="tab">{{ $form->jumlah_saudara }}</span> bersaudara</li>
+      <li>Calon siswa adalah anak ke {{ $form->anak_ke }} dari {{ $form->jumlah_saudara }} bersaudara</li>
       <p>
         {{ $form->saudara_kandung }}
       </p>

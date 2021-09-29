@@ -17,7 +17,7 @@ class CreateFormsTable extends Migration
             $table->id();
             $table->boolean('is_verified')->default(0);
             $table->foreignId('user_id');
-            $table->foreignId('unit_id');
+            $table->foreignId('unit_id');            
             $table->string('nama_lengkap')->nullable();
             $table->string('nama_panggilan')->nullable();
             $table->string('jenis_kelamin');

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Carbon\Carbon;
 use App\Models\Form;
+use App\Models\Quitioner;
 use App\Models\Unit;
 use App\Models\User;
 use GuzzleHttp\Promise\Create;
@@ -36,6 +37,32 @@ class DatabaseSeeder extends Seeder
             'tanggal_lahir'=>Carbon::createFromDate(2001,07,22)->toDateTimeString(),
             'berkebutuhan_khusus'=>'tidak',
             'jenis_kelamin'=>'Laki-laki'
+        ]);
+        Form::create([
+            'user_id'=>2,
+            'unit_id'=>1,
+            'nik'=>'111100008888333',
+            'nisn'=>'2001090888',
+            'nama_lengkap'=>'Nur',
+            'nama_panggilan'=>'Nur',
+            'tempat_lahir'=>'Depok',
+            'tanggal_lahir'=>Carbon::createFromDate(2006,01,22)->toDateTimeString(),
+            'berkebutuhan_khusus'=>'tidak',
+            'jenis_kelamin'=>'Perempuan',
+            
+        ]);
+        Quitioner::create([
+            'user_id'=>2,
+            'form_id' => 2,
+            'quis10' => 'ya',
+            'quis20' => 'ya',
+            'quis30' => 'ya',
+            'quis40' => 'ya',
+            'quis50' => 'ya',
+            'quis60' => 'ya',
+            'quis70' => 'ya',
+            'quis80' => 'ya',
+            'quis90' => 'ya',
         ]);
     }
 }

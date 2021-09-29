@@ -30,6 +30,9 @@ class Form extends Model
         return $this->hasOne(Photo::class);
     }
 
+    public function quitioner(){
+        return $this->hasOne(Quitioner::class);
+    }
     public function status()
    {
        if ($this->is_verified){
