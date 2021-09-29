@@ -1,14 +1,16 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\FormulirController;
-use App\Http\Controllers\User\FormulirController as UserFormulirController;
-use App\Http\Controllers\Admin\UserController as AdminUserController;
-use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\FormulirController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\User\FormulirController as UserFormulirController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +55,24 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware'=>['auth',
     Route::get('/users/{user:id}',[AdminUserController::class,'edit'])->name('admin.edit-admin');
     Route::put('/users/{user:id}',[AdminUserController::class,'update'])->name('admin.update-admin');
     Route::delete('/users/{user:id}',[AdminUserController::class,'destroy'])->name('admin.delete-admin');
+
+    Route::get('storage/{filename}', function ($filename)
+    {
+        // Add folder path here instead of storing in the database.
+        $path = storage_path('public/myfolder1' . $filename);
+
+        if (!File::exists($path)) {
+            abort(404);
+        }
+
+        $file = File::get($path);
+        $type = File::mimeType($path);
+
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+
+        return $response;
+    });
 });
 
 Route::group(['namespace' => 'User', 'prefix' => 'user','middleware'=>['auth','cek_login:user']], function() {
