@@ -53,7 +53,6 @@ class DatabaseSeeder extends Seeder
         ]);
         Quitioner::create([
             'user_id'=>2,
-            'form_id' => 2,
             'quis10' => 'ya',
             'quis20' => 'ya',
             'quis30' => 'ya',
