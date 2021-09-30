@@ -222,7 +222,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Pendidikan Terakhir :</label>
-                                        <?php  $edu = array("SD"=>"SD","SMP"=>"SMP","SMA"=>"SMA","S1"=>"S1","S2"=>"S2","S3"=>"S3"); ?>
+                                        <?php  $edu = array("SD"=>"SD","SMP"=>"SMP","SMA"=>"SMA","D3"=>"D3","S1"=>"S1","S2"=>"S2","S3"=>"S3"); ?>
                                         <select name="pendidikan_terakhir_ayah required" class="form-control">
                                             @foreach ($edu as $ed =>$name)
                                                 <option value="{{ $ed }}"
@@ -304,7 +304,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Pendidikan Terakhir :</label>
-                                        <?php  $edu = array("SD"=>"SD","SMP"=>"SMP","SMA"=>"SMA","S1"=>"S1","S2"=>"S2","S3"=>"S3"); ?>
+                                        <?php  $edu = array("SD"=>"SD","SMP"=>"SMP","SMA"=>"SMA","D3"=>"D3","S1"=>"S1","S2"=>"S2","S3"=>"S3"); ?>
                                         <select name="pendidikan_terakhir_ibu" class="form-control">
                                             @foreach ($edu as $ed =>$name)
                                                 <option value="{{ $ed }}"
@@ -385,7 +385,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Pendidikan Terakhir :</label>
-                                        <?php  $edu = array("SD"=>"SD","SMP"=>"SMP","SMA"=>"SMA","S1"=>"S1","S2"=>"S2","S3"=>"S3"); ?>
+                                        <?php  $edu = array("SD"=>"SD","SMP"=>"SMP","SMA"=>"SMA","D3"=>"D3","S1"=>"S1","S2"=>"S2","S3"=>"S3"); ?>
                                         <select name="pendidikan_terakhir_wali" class="form-control">
                                             @foreach ($edu as $ed =>$name)
                                                 <option value="{{ $ed }}"
