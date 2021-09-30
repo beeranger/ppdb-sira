@@ -1,4 +1,4 @@
-@extends('user.main')
+@extends('admin.main')
 
 @section('content')
 <div class="page-breadcrumb">
@@ -607,6 +607,13 @@
                                     <label class="control-label col-md-4 font-weight-medium">Nomor Rekening : </label>
                                     <div class="col-md-8">
                                         <p class="form-control-static">{{ $form->rekening }}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row py-3">
+                                    <label class="control-label col-md-4 font-weight-medium">Kontak yang dapat dihubungi : </label>
+                                    <div class="col-md-8">
+                                        <p class="form-control-static">{{ $form->kontak }}</p>
                                     </div>
                                 </div>
                             </div>

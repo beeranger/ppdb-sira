@@ -1,4 +1,4 @@
-@extends('user.main')
+@extends('admin.main')
 
 @section('content')
 <div class="container-fluid">
@@ -13,7 +13,7 @@
                     <form action="{{ route('user.store-formulir',2) }}" method="POST" class="validation-wizard wizard-circle mt-5" enctype="multipart/form-data" id="form-sd" >
                         @csrf
                         <!-- Step 9 -->
-                        <h6>Upload bukti pembayaran</h6>
+                        {{-- <h6>Upload bukti pembayaran</h6>
                         <section>
                             <div class="row">
                                 <div class="col-md-6">
@@ -41,21 +41,13 @@
                                         <label for="">Nomor Rekening :</label>
                                         <input type="text" class="form-control required" id="rekening" name="rekening" value="{{ old('rekening') }}">
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="">No Handphone yang dapat dihubungi :</label>
-                                        <input type="text" class="form-control required" id="kontak" name="kontak" value="{{ old('rekening') }}">
-                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for=""> Bukti pembayaran</label>
-                                    {{-- <form class="mb-3" action="{{ route('user.store-formulir') }}" method="POST">
-                                        @csrf
-                                    </form> --}}
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input class="form-control required" type="file" id="photo_url" name="photo_url" aria-describedby="fileHelp" value="{{ old('photo_url') }}">
                                         </div>
-                                        {{-- <button class="btn btn-light-info text-info font-weight-medium" type="submit" name="action" value="upload">Upload</button> --}}
                                         <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of image should not be more than 2MB.</small>
                                         @error('image')
                                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -64,7 +56,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </section> --}}
                         <!-- Step 1 -->
                         <h6>Data calon siswa</h6>
                         <section>

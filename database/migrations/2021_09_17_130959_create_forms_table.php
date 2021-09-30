@@ -106,6 +106,7 @@ class CreateFormsTable extends Migration
             
             $table->string('bank')->nullable();     
             $table->string('rekening')->nullable();     
+            $table->string('kontak')->nullable();     
             $table->string('photo_url')->nullable(); 
             $table->timestamps();
         });

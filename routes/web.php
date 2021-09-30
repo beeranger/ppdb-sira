@@ -48,6 +48,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware'=>['auth',
     Route::put('/formulir/{form:id}',[FormulirController::class,'verify'])->name('admin.verify-formulir');    
     Route::delete('/formulir/{form:id}',[FormulirController::class,'destroy'])->name('admin.delete-formulir');
     Route::get('/createPDF/{form:id}',[FormulirController::class,'createPDF'])->name('admin.getPDF');
+    Route::get('/formulir/create/{unit:id}',[FormulirController::class,'create'])->name('admin.add-formulir');
+    Route::post('/formulir/create/{unit:id}',[FormulirController::class,'store'])->name('admin.store-formulir');
+    Route::get('/formulir/list/{unit:id}',[FormulirController::class,'index'])->name('admin.list-formulir');
+    // Route::post('/formulir/list/{unit:id}',[FormulirController::class,'store'])->name('admin.store-formulir');
 
     Route::get('/users',[AdminUserController::class,'index'])->name('admin.list-users');
     Route::get('/users/add-admin',[AdminUserController::class,'create'])->name('admin.add-admin');
@@ -56,10 +60,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware'=>['auth',
     Route::put('/users/{user:id}',[AdminUserController::class,'update'])->name('admin.update-admin');
     Route::delete('/users/{user:id}',[AdminUserController::class,'destroy'])->name('admin.delete-admin');
     
-    Route::get('/storage-link', function(){
-        Artisan::call('storage:link');
-        return 'The links have been created.';
-    });
+
 });
 
 Route::group(['namespace' => 'User', 'prefix' => 'user','middleware'=>['auth','cek_login:user']], function() {

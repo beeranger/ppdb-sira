@@ -160,6 +160,7 @@ class FormulirController extends Controller
     
                 'bank' =>$request->bank,
                 'rekening' =>$request->rekening,
+                'kontak' =>$request->kontak,
                 'photo_url' => $imgname,
     
             ]);
@@ -332,6 +333,7 @@ class FormulirController extends Controller
     
                 'bank' =>$request->bank,
                 'rekening' =>$request->rekening,
+                'kontak' =>$request->kontak,
                 'photo_url' =>$imgname ,
     
             ]);
