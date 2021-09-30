@@ -617,7 +617,7 @@
                                     @if ($form->photo_url == NULL)
                                         <p class="text-muted"> tidak ada bukti pembayaran yang diupload</p>                                        
                                     @else
-                                        <img src="{{ $path }}" class="d-block position-relative w-100" alt="{{ $form->id }}" />                                        
+                                        <img src="{{ asset('storage/galeri/'.$form->photo_url) }}" class="d-block position-relative w-100" alt="{{ $form->id }}" />                                        
                                     @endif
                                 </form>
                             </div>

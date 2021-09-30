@@ -56,8 +56,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware'=>['auth',
     Route::put('/users/{user:id}',[AdminUserController::class,'update'])->name('admin.update-admin');
     Route::delete('/users/{user:id}',[AdminUserController::class,'destroy'])->name('admin.delete-admin');
     
-    Route::get('/storage', function(){
+    Route::get('/storage-link', function(){
         Artisan::call('storage:link');
+        return 'The links have been created.';
     });
 });
 
