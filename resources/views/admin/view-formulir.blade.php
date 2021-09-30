@@ -612,12 +612,13 @@
                             </div>
                             <div class="col-md-6">
                                 <form class="mb-3">
-                                    @php $path = Storage::url('public/galeri/'.$form->photo_url); @endphp                                    
-                                    <label for=""> Bukti pembayaran  :{{ $form->photo_url }}</label>
+                                    @php $path = Storage::disk('public')->url('bukti-bayar/'.$form->photo_url); @endphp                                    
+                                    <label for=""> Bukti pembayaran  :{{ $form->photo_url }} {{ $path }}</label>
                                     @if ($form->photo_url == NULL)
                                         <p class="text-muted"> tidak ada bukti pembayaran yang diupload</p>                                        
                                     @else
-                                        <img src="{{ asset('storage/galeri/'.$form->photo_url) }}" class="d-block position-relative w-100" alt="{{ $form->id }}" />                                        
+                                        <img src="{{ $path }}" class="d-block position-relative w-100" alt="{{ $form->id }}" />  
+                                        {{-- {{ url('uploads/bukti-bayar/'.$form->photo_url) }}                                       --}}
                                     @endif
                                 </form>
                             </div>

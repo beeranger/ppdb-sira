@@ -60,9 +60,10 @@ class FormulirController extends Controller
         $ext = $request->file('photo_url')->getClientOriginalExtension();
         //FILNAME TO STORE
         $imgname = $filename.'_'.time().'.'.$ext;
-        $path = Storage::putFileAs('public/galeri', $request->file('photo_url'),$imgname);
-        
-        
+        // $path = Storage::putFileAs('public/uploads/', $request->file('photo_url'),$imgname);
+        // $path = $request->file('photo_url')->storeAs('public/galeri', $imgname);
+        $file = request()->file('photo_url');
+        Storage::disk('public')->putFileAs('bukti-bayar/', $request->file('photo_url'),$imgname);
         Photo::create([
                 'url' => $imgname,
             ]);
