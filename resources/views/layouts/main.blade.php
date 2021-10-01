@@ -10,7 +10,7 @@
     <meta name="description" content="Sistem pendaftaran online Sekolah islam Ramah Anak">
     <meta name="robots" content="noindex,nofollow">
     <title>PPDB SI RamahAnak</title>
-    <link rel="canonical" href="https://www.wrappixel.com/templates/niceadmin/" />
+    <link rel="canonical" href="https://ppdb.ramahanak.sch.id/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/assets/favicon-ra.png') }}">
     <!-- Custom CSS -->
