@@ -10,16 +10,7 @@
     <div class="row align-items-center justify-content-center">
         <div class="col-lg-8 ">
             <div class="card">
-                <div class="card-header bg-warning">
-                    <h4 class="mb-0 text-white">SDI Ramah Anak</h4></div>
-                <div class="card-body">
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header bg-info">
-                    <h4 class="mb-0 text-white">SMPI Ramah Anak</h4></div>
-                <div class="card-body">
-                </div>
+                <img src="{{ asset('images/alur.png') }}" alt="" >
             </div>
         </div>
     </div>
