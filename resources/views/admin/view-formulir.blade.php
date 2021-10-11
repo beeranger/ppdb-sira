@@ -651,7 +651,7 @@
                     @endif
                 </div>
                 <div class="card-footer">
-                    <a href="{{ route('admin.home') }}" class="btn btn-primary" >Kembali</a>
+                    <a href="{{ route('admin.home') }}" class="btn btn-primary" >Kembali ke Beranda</a>
                 </div>
             </div>
         </div>
