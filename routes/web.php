@@ -51,6 +51,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware'=>['auth',
     Route::get('/formulir/create/{unit:id}',[FormulirController::class,'create'])->name('admin.add-formulir');
     Route::post('/formulir/create/{unit:id}',[FormulirController::class,'store'])->name('admin.store-formulir');
     Route::get('/formulir/list/{unit:id}',[FormulirController::class,'index'])->name('admin.list-formulir');
+    Route::get('/formulir/edit/{form:id}',[FormulirController::class,'edit'])->name('admin.edit-formulir');
+    Route::put('/formulir/edit/{form:id}',[FormulirController::class,'update'])->name('admin.update-formulir');
     // Route::post('/formulir/list/{unit:id}',[FormulirController::class,'store'])->name('admin.store-formulir');
 
     Route::get('/users',[AdminUserController::class,'index'])->name('admin.list-users');

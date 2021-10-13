@@ -95,7 +95,7 @@
                                             <i data-feather="more-horizontal" class="feather-sm"></i>
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <li><a class="dropdown-item" href="{{ route('admin.view-formulir',$form->id) }}">Lihat Detail</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('admin.edit-formulir',$form->id) }}">Edit Detail</a></li>
                                             <li>
                                                 {{-- <a class="dropdown-item" href="#">Delete</a> --}}
                                                 <form action="{{ route('admin.delete-formulir',$form->id) }}" method="POST" class="d-inline">                

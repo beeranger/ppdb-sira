@@ -262,6 +262,10 @@
                                     <div class="mb-3">
                                         <label for="">Penghasilan :</label>
                                         <div class="form-check">
+                                            <input type="radio" class="form-check-input required" id="penghasilan_ayah" name="penghasilan_ayah" value="0-500rb" {{ old('penghasilan_ayah')=="0-500rb" ? 'checked' : '' }}>
+                                            <label class="fork-check-label" for="">Rp.0- Rp.500.000 </label>
+                                        </div>
+                                        <div class="form-check">
                                             <input type="radio" class="form-check-input required" id="penghasilan_ayah" name="penghasilan_ayah" value="500rb-2jt" {{ old('penghasilan_ayah')=="500rb-2jt" ? 'checked' : '' }}>
                                             <label class="fork-check-label" for="">Rp.500.000-Rp.2.000.000 </label>
                                         </div>
@@ -343,13 +347,16 @@
                                     <div class="mb-3">
                                         <label for="">Penghasilan :</label>
                                         <div class="form-check">
+                                            <input type="radio" class="form-check-input required" id="penghasilan_ibu" name="penghasilan_ibu" value="0-500rb" {{ old('penghasilan_ibu')=="0-500rb" ? 'checked' : '' }}>
+                                            <label class="fork-check-label" for="">Rp.0-Rp.500.000 </label>
+                                        </div>
+                                        <div class="form-check">
                                             <input type="radio" class="form-check-input required" id="penghasilan_ibu" name="penghasilan_ibu" value="500rb-2jt" {{ old('penghasilan_ibu')=="500rb-2jt" ? 'checked' : '' }}>
                                             <label class="fork-check-label" for="">Rp.500.000-Rp.2.000.000 </label>
                                         </div>
                                         <div class="form-check">
                                             <input type="radio" class="form-check-input required" id="penghasilan_ibu" name="penghasilan_ibu" value="2jt-5jt" {{ old('penghasilan_ibu')=="2jt-5jt" ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="">Rp.2.000.000-Rp.5.000.000 </label>
-                                            
+                                            <label class="form-check-label" for="">Rp.2.000.000-Rp.5.000.000 </label>                                            
                                         </div>
                                         <div class="form-check">
                                             <input type="radio" class="form-check-input required" id="penghasilan_ibu" name="penghasilan_ibu" value="5jt-20jt" {{ old('penghasilan_ibu')=="5jt-20jt" ? 'checked' : '' }} >
@@ -423,6 +430,10 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Penghasilan :</label>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" id="penghasilan_wali" name="penghasilan_wali" value="0-500rb" {{ old('penghasilan_wali')=="0-500rb" ? 'checked' : '' }}>
+                                            <label class="fork-check-label" for="">Rp.-Rp.500.000 </label>
+                                        </div>
                                         <div class="form-check">
                                             <input type="radio" class="form-check-input reuired" id="penghasilan_wali" name="penghasilan_wali" value="500rb-2jt" {{ old('penghasilan_wali')=="500rb-2jt" ? 'checked' : '' }}>
                                             <label class="fork-check-label" for="">Rp.500.000-Rp.2.000.000 </label>

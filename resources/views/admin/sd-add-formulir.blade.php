@@ -45,7 +45,7 @@
                                     <div class="mb-3">
                                         <label for="">No Handphone yang dapat dihubungi :</label>
                                         <p class="text-muted"> masukan kontak orang tua</p>
-                                        <input type="number" class="form-control " id="kontak" name="kontak" value="{{ old('rekening') }}">
+                                        <input type="number" class="form-control " id="kontak" name="kontak" value="{{ old('kontak') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -233,7 +233,7 @@
                                     <div class="mb-3">
                                         <label for="">Pendidikan Terakhir :</label>
                                         <?php  $edu = array("SD"=>"SD","SMP"=>"SMP","SMA"=>"SMA","D3"=>"D3","S1"=>"S1","S2"=>"S2","S3"=>"S3"); ?>
-                                        <select name="pendidikan_terakhir_ayah required" class="form-control">
+                                        <select name="pendidikan_terakhir_ayah" class="form-control required">
                                             @foreach ($edu as $ed =>$name)
                                                 <option value="{{ $ed }}"
                                                 @if (old('pendidikan_terakhir_ayah') == $ed)
@@ -263,6 +263,10 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="">Penghasilan :</label>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input required" id="penghasilan_ayah" name="penghasilan_ayah" value="0-500rb" {{ old('penghasilan_ayah')=="0-500rb" ? 'checked' : '' }}>
+                                            <label class="fork-check-label" for="">Rp.0- Rp.500.000 </label>
+                                        </div>
                                         <div class="form-check">
                                             <input type="radio" class="form-check-input required" id="penghasilan_ayah" name="penghasilan_ayah" value="500rb-2jt" {{ old('penghasilan_ayah')=="500rb-2jt" ? 'checked' : '' }}>
                                             <label class="fork-check-label" for="">Rp.500.000-Rp.2.000.000 </label>
@@ -345,6 +349,10 @@
                                     <div class="mb-3">
                                         <label for="">Penghasilan :</label>
                                         <div class="form-check">
+                                            <input type="radio" class="form-check-input required" id="penghasilan_ibu" name="penghasilan_ibu" value="0-500rb" {{ old('penghasilan_ibu')=="0-500rb" ? 'checked' : '' }}>
+                                            <label class="fork-check-label" for="">Rp.0-Rp.500.000 </label>
+                                        </div>
+                                        <div class="form-check">
                                             <input type="radio" class="form-check-input required" id="penghasilan_ibu" name="penghasilan_ibu" value="500rb-2jt" {{ old('penghasilan_ibu')=="500rb-2jt" ? 'checked' : '' }}>
                                             <label class="fork-check-label" for="">Rp.500.000-Rp.2.000.000 </label>
                                         </div>
@@ -426,7 +434,11 @@
                                     <div class="mb-3">
                                         <label for="">Penghasilan :</label>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input reuired" id="penghasilan_wali" name="penghasilan_wali" value="500rb-2jt" {{ old('penghasilan_wali')=="500rb-2jt" ? 'checked' : '' }}>
+                                            <input type="radio" class="form-check-input" id="penghasilan_wali" name="penghasilan_wali" value="0-500rb" {{ old('penghasilan_wali')=="0-500rb" ? 'checked' : '' }}>
+                                            <label class="fork-check-label" for="">Rp.-Rp.500.000 </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" id="penghasilan_wali" name="penghasilan_wali" value="500rb-2jt" {{ old('penghasilan_wali')=="500rb-2jt" ? 'checked' : '' }}>
                                             <label class="fork-check-label" for="">Rp.500.000-Rp.2.000.000 </label>
                                         </div>
                                         <div class="form-check">
