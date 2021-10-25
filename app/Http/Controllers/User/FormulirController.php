@@ -83,7 +83,7 @@ class FormulirController extends Controller
                 'hobi' =>$request->hobi,
                 'cita2' =>$request->cita2,
     
-                'alamat' =>$request->cita2,
+                'alamat' =>$request->alamat,
                 'tempat_tinggal' =>$request->tempat_tinggal,
                 'berkebutuhan_khusus' =>$request->berkebutuhan_khusus,
                 'jenis_berkebutuhan_khusus' =>$request->jenis_berkebutuhan_khusus,
@@ -278,7 +278,7 @@ class FormulirController extends Controller
                 'hobi' =>$request->hobi,
                 'cita2' =>$request->cita2,
     
-                'alamat' =>$request->cita2,
+                'alamat' =>$request->alamat,
                 'tempat_tinggal' =>$request->tempat_tinggal,
                 'berkebutuhan_khusus' =>$request->berkebutuhan_khusus,
                 'jenis_berkebutuhan_khusus' =>$request->jenis_berkebutuhan_khusus,

@@ -59,7 +59,7 @@
                                         </ul>
                                     </div>
                                 </td>
-                                </tr> 
+                            </tr> 
                             @endforeach
                             <!-- end row -->                                                        
                         </tbody>

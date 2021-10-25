@@ -230,7 +230,7 @@
                                     <div class="mb-3">
                                         <label for="">Pendidikan Terakhir :</label>
                                         <?php  $edu = array("SD"=>"SD","SMP"=>"SMP","SMA"=>"SMA","D3"=>"D3","S1"=>"S1","S2"=>"S2","S3"=>"S3"); ?>
-                                        <select name="pendidikan_terakhir_ayah required" class="form-control">
+                                        <select name="pendidikan_terakhir_ayah" class="form-control required">
                                             @foreach ($edu as $ed =>$name)
                                                 <option value="{{ $ed }}"
                                                 @if (old('pendidikan_terakhir_ayah') == $ed)
