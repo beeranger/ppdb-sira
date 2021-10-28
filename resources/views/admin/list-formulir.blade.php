@@ -90,25 +90,14 @@
                             @foreach ($forms as $form)                                
                             <tr>
                                 <td>
-                                    <div class="dropdown dropstart">
-                                        <a href="#" class="text-muted" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i data-feather="more-horizontal" class="feather-sm"></i>
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <li><a class="dropdown-item" href="{{ route('admin.edit-formulir',$form->id) }}">Edit Detail</a></li>
-                                            <li>
-                                                {{-- <a class="dropdown-item" href="#">Delete</a> --}}
-                                                <form action="{{ route('admin.delete-formulir',$form->id) }}" method="POST" class="d-inline">                
-                                                    @method('delete')
-                                                    @csrf
-                                                    <button type="submit" class="dropdown-item">Hapus</button>
-                                                </form>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('admin.getPDF',$form->id) }}" class="dropdown-item" >Simpan dalam PDF</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <a class="btn btn-light" href="{{ route('admin.edit-formulir',$form->id) }}">Edit</a>
+                                    <form action="{{ route('admin.delete-formulir',$form->id) }}" method="POST" class="d-inline">                
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" class="btn btn-light">Hapus</button>
+                                    </form>
+                                    <a href="{{ route('admin.getPDF',$form->id) }}" class="btn btn-light" >PDF</a>
+                                    
                                 </td>
                                 <td>{{ $form->formulirID() }}</td>
                                 <td>{{ $form->nama_lengkap }}</td>
@@ -270,12 +259,6 @@
 @section('extra-js')
 <script>
     $('#file_export_sd').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    });
-    $('#file_export_smp').DataTable({
         dom: 'Bfrtip',
         buttons: [
             'copy', 'csv', 'excel', 'pdf', 'print'
